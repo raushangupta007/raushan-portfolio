@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Raushan Kumar | Portfolio Clone</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+     <link rel="icon" href="img/image.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glow-effect:hover {
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-gray-900">
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-900 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider text-emerald-400">RAUSHAN<span
+                    class="text-white">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+                <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+            </div>
+            <a href="#contact"
+                class="hidden md:inline-block bg-emerald-500 hover:bg-emerald-600 text-gray-950 px-4 py-2 rounded-lg font-semibold text-sm transition-colors">Hire
+                Me</a>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    
+    <section class="relative min-h-[90vh] flex items-start px-6 overflow-hidden bg-[#070b13]">
+    
+        <!-- Background Canvas for Net/Particle Effect -->
+        <canvas id="particles-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-40"></canvas>
+    
+        <!-- Changed pt-20 to pt-10 and items-center to items-start to remove the huge top gap -->
+        <div
+            class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start w-full pt-10 md:pt-14">
+    
+            <!-- Left Side Content -->
+            <div class="md:col-span-7 space-y-6 text-left pt-4">
+                <!-- Badge -->
+                <div
+                    class="inline-block bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-4 py-1.5 rounded-full font-medium">
+                    Welcome To My Portfolio
+                </div>
+    
+                <!-- Main Headings -->
+                <div class="space-y-2">
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white">
+                        Hi, I'm <span class="text-blue-500">Raushan</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-300">
+                        Building Real-World Projects
+                    </h2>
+                </div>
+    
+                <!-- Paragraph Text -->
+                <p class="text-gray-400 max-w-xl text-sm md:text-base leading-relaxed">
+                I'm passionate about building innovative software solutions, exploring real-world data, and developing machine learning
+                systems that transform complex problems into intelligent solutions. Through technology, data, and AI, I create impactful
+                projects that drive meaningful results and learning more about my work, don't hesitate to get in touch!
+                </p>
+    
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://github.com/raushangupta007" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                        <i class="fa-brands fa-github text-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raushangupta07/" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-blue-400 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/raushangupta007/" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-yellow-500 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.116 5.826a1.373 1.373 0 0 0-.41.961c0 .374.148.732.411.995l1.048 1.048a1.373 1.373 0 0 0 .961.41h.017c.373 0 .73-.148.993-.411l2.39-2.39 5.059 5.059-4.82 4.82a1.346 1.346 0 0 0-.397.962c0 .36.14.705.397.962l1.021 1.021c.257.256.601.397.962.397.36 0 .705-.14 1.01-.397l6.116-6.116a1.373 1.373 0 0 0 0-1.942L14.444.411A1.351 1.351 0 0 0 13.483 0zm-6.08 12.558c-.36 0-.705.14-.962.397l-4.82 4.82a1.373 1.373 0 0 0 0 1.942l1.022 1.021c.256.256.601.397.961.397.36 0 .706-.14.962-.397l4.82-4.82a1.36 1.36 0 0 0 0-1.942l-1.022-1.021a1.352 1.352 0 0 0-.962-.397z" />
+                        </svg>
+                    </a>
+                </div>
+    
+                <!-- Action Buttons -->
+                <div class="flex gap-4 pt-4">
+                    <a href="#projects"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+                        View Projects <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="Raushan_Kumar_Resume.pdf"
+                        class="bg-[#131b2e] border border-gray-800 hover:border-gray-700 text-gray-300 px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-download text-xs"></i> Resume
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Right Side Image Container -->
+        <div class="md:col-span-5 flex justify-center md:justify-end pt-6 md:pt-0">
+        
+            <!-- Profile Frame (Now acting as the real Relative Parent) -->
+            <div
+                class="relative w-full max-w-[320px] aspect-[4/5] rounded-3xl border-2 border-blue-500/40 p-3 shadow-2xl shadow-blue-500/5 bg-[#090f1c]">
+        
+                <!-- Floating Skill Badge 1: Data Analyst (Top Left) -->
+                <div
+                    class="absolute top-6 -left-6 bg-[#0d1527]/90 border border-blue-500/20 px-3 py-1.5 rounded-lg shadow-xl backdrop-blur-sm z-20">
+                    <span class="text-xs font-semibold text-blue-400">Data Analyst</span>
+                </div>
+        
+                <!-- Floating Skill Badge 2: (ML) Engineer -->
+                <div
+                    class="absolute bottom-6 -right-6 bg-[#0d1527]/90 border border-blue-500/20 px-3 py-1.5 rounded-lg shadow-xl backdrop-blur-sm z-20">
+                    <span class="text-xs font-semibold text-blue-400">ML Engineer</span>
+                </div>
+        
+                <!-- Inner Photo Container -->
+                <div class="w-full h-full rounded-2xl overflow-hidden bg-gray-900">
+                    <img src="img/image.webp" alt="Darshan" class="w-full h-full object-cover">
+                </div>
+        
+            </div>
+        
+        </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    
+    <section id="about" class="py-24 px-6 max-w-6xl mx-auto border-t border-gray-900/50">
+        <!-- Section Header -->
+        <div class="text-center mb-16 space-y-3">
+            <span
+                class="bg-blue-500/10 text-blue-400 text-xs font-medium px-3 py-1 rounded-full border border-blue-500/20">About
+                Me</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                Passionate About <span class="text-blue-500">Technology</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                I enjoy building modern digital products, learning new technologies, and solving real-world problems through
+                code.
+            </p>
+
+            <div class="flex items-center gap-3 pt-2">
+                <!-- GitHub -->
+                <a href="https://github.com/raushangupta007" target="_blank"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-white hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/raushangupta07/" target="_blank"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-blue-400 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <!-- LeetCode -->
+                <a href="https://leetcode.com/u/raushangupta007/" target="_blank"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900/60 border border-gray-800 text-gray-400 hover:text-yellow-500 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
+                    <!-- Custom SVG for LeetCode Icon -->
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.116 5.826a1.373 1.373 0 0 0-.41.961c0 .374.148.732.411.995l1.048 1.048a1.373 1.373 0 0 0 .961.41h.017c.373 0 .73-.148.993-.411l2.39-2.39 5.059 5.059-4.82 4.82a1.346 1.346 0 0 0-.397.962c0 .36.14.705.397.962l1.021 1.021c.257.256.601.397.962.397.36 0 .705-.14 1.01-.397l6.116-6.116a1.373 1.373 0 0 0 0-1.942L14.444.411A1.351 1.351 0 0 0 13.483 0zm-6.08 12.558c-.36 0-.705.14-.962.397l-4.82 4.82a1.373 1.373 0 0 0 0 1.942l1.022 1.021c.256.256.601.397.961.397.36 0 .706-.14.962-.397l4.82-4.82a1.36 1.36 0 0 0 0-1.942l-1.022-1.021a1.352 1.352 0 0 0-.962-.397z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start mt-12">
+    
+            <!-- Left Side: Profile Image Box -->
+            <div class="md:col-span-5 flex justify-center md:justify-end">
+                <div
+                    class="relative w-full max-w-[340px] aspect-[4/5] bg-[#0d1527] rounded-2xl border border-blue-500/10 p-4 shadow-xl group">
+                    <!-- Inner Image container -->
+                    <div class="w-full h-full rounded-xl overflow-hidden bg-gray-900 relative">
+                       
+                        <img src="img/image.webp" alt="Raushan Kumar"
+                            class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right Side: Text Content -->
+            <div class="md:col-span-7 space-y-6 text-left">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white">
+                    Hi, I'm <span class="text-blue-500">Raushan Kumar</span>
+                </h3>
+    
+                <div class="space-y-4 text-gray-400 text-sm md:text-base leading-relaxed font-normal">
+                    <p>
+                        I have completed my BCA and I'm currently pursuing MCA with a strong interest in Data Science, Machine Learning, and
+                        Data Analytics. I am passionate about exploring real-world datasets, discovering meaningful patterns, building
+                        intelligent machine learning models, and creating data-driven solutions that help solve complex real-world problems. 
+                    <p>
+                        I enjoy learning new technologies, improving my technical skills, and applying analytical thinking to develop innovative
+                        solutions using data and artificial intelligence.
+                        </p>
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    <!-- 4. SKILLS SECTION -->
+
+<section id="skills" class="py-24 px-6 max-w-6xl mx-auto border-t border-gray-900/50">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16 space-y-4">
+        <!-- Top Capsule Badge -->
+        <div
+            class="inline-block bg-blue-500/5 border border-blue-500/10 text-gray-500 text-[11px] px-4 py-1 rounded-full font-medium tracking-wide">
+            Technical Skills
+        </div>
+        <!-- Main Title -->
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            My <span class="text-blue-600">Expertise</span>
+        </h2>
+        <!-- Subtitle -->
+        <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            Technologies I use to build modern, scalable, and efficient applications.
+        </p>
+    </div>
+
+    <!-- Skills Grid Container (4 Columns on Desktop, 2 on Tablet, 1 on Mobile) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+        
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-brands fa-html5 text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">HTML / CSS</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-brands fa-js text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">JavaScript</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-brands fa-react text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">React.js</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-wind text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">Tailwind CSS</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-brands fa-python text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Python</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-calculator text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">NumPy</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-table text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Pandas</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-chart-line text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Matplotlib</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-chart-bar text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Seaborn</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-chart-pie text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Power BI</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-brain text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Scikit-Learn</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-server text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">MySQL / SQL</span>
+        </div>
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-code text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">C Language</span>
+        </div>
+        
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <svg class="w-8 h-8 text-blue-500 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                <path
+                    d="M2 12a10 10 0 1020 0 10 10 0 00-20 0zm13-3h2v2h2v2h-2v2h-2v-2h-2v-2h2V9zm-7.5 1.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm4 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" />
+            </svg>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">C++</span>
+        </div>
+        
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-database text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">DBMS</span>
+        </div>
+        
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-sliders text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">Operating System</span>
+        </div>
+        
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-solid fa-diagram-project text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300 tracking-wide">DSA</span>
+        </div>
+
+        <div
+            class="bg-[#0f1626]/60 border border-gray-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 hover:border-blue-500/30 transition-all duration-300 group min-h-[140px] shadow-lg">
+            <i class="fa-brands fa-git-alt text-blue-500 text-3xl group-hover:scale-110 transition-transform"></i>
+            <span class="font-semibold text-sm text-gray-300">Git & Version Control</span>
+        </div>
+        
+    </div>
+</section>
+
+    <!-- 5. EXPERIENCE SECTION -->
+    <section id="education" class="py-24 px-6 max-w-6xl mx-auto border-t border-gray-900/50 relative overflow-hidden">
+    
+        <!-- Section Header -->
+        <div class="text-center mb-20 space-y-4">
+            <!-- Top Capsule Badge -->
+            <div
+                class="inline-block bg-blue-500/5 border border-blue-500/10 text-blue-400 text-[11px] px-4 py-1 rounded-full font-medium tracking-wide">
+                Education
+            </div>
+            <!-- Main Title -->
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                Educational <span class="text-blue-600">Journey</span>
+            </h2>
+            <!-- Subtitle -->
+            <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                My academic background, qualifications, and learning pathway.
+            </p>
+        </div>
+    
+        <!-- Timeline Container -->
+        <div class="relative max-w-5xl mx-auto mt-12">
+    
+            <!-- Center Vertical Line (Hidden on mobile, visible on desktop) -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-blue-600 transform md:-translate-x-1/2 z-0">
+            </div>
+    
+            <!-- TIMELINE ITEM 1: Left Side Card (e.g., Graduation) -->
+            <div class="relative flex flex-col md:flex-row items-stretch mb-16 w-full z-10">
+                <!-- Left Side Content Wrapper (Desktop Only) -->
+                <div class="w-full md:w-1/2 md:pr-12 flex justify-end order-2 md:order-1">
+                    <!-- Card Container -->
+                    <div
+                        class="bg-[#0f1626]/60 border border-gray-900/80 rounded-3xl p-6 md:p-8 w-full max-w-md shadow-xl text-left space-y-4 hover:border-blue-500/20 transition-all">
+                        <!-- College Header Info -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-950/40 border border-blue-900/40 flex items-center justify-center flex-shrink-0 text-blue-500">
+                                <i class="fa-solid fa-graduation-cap text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white tracking-wide">Galgotias College of Engineering and Technology, Gr. Noida</h3>
+                                <p class="text-gray-500 text-xs font-mono mt-1 flex items-center gap-1.5">
+                                    <i class="fa-regular fa-calendar text-[11px]"></i> 2025 - 2027
+                                </p>
+                            </div>
+                        </div>
+    
+                        <!-- Degree/Course Name -->
+                        <h4 class="text-blue-500 font-bold text-lg tracking-wide pl-16 md:pl-16">Master of Computer Applications</h4>
+    
+                        <!-- Affiliation / Location -->
+                        <p class="text-gray-400 text-xs pl-16 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-blue-500"></i>Dr. A.P.J. Abdul Kalam Technical University Lucknow
+                        </p>
+    
+                        <!-- Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed pl-16">
+                            Currently pursuing Master of Computer Applications (MCA) with advanced knowledge in programming, software development,
+                            database management, and modern computing technologies.
+                        </p>
+    
+                        <!-- Status Tag Button -->
+                        <div class="pt-2 pl-16">
+                            <span
+                                class="inline-flex items-center gap-1.5 bg-blue-950/30 border border-blue-900/50 text-gray-300 text-xs px-4 py-1.5 rounded-full font-medium">
+                                <i class="fa-solid fa-arrow-right text-[10px] text-blue-500"></i> Pursuing
+                            </span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Timeline Node Center Indicator -->
+                <div
+                    class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#070b13] outline outline-2 outline-blue-600/30 transform -translate-x-1/2 top-10 z-20 order-1 md:order-2">
+                </div>
+    
+                <!-- Right Empty Space Holder (Desktop Only) -->
+                <div class="w-full md:w-1/2 order-3 hidden md:block"></div>
+            </div>
+    
+            <!-- TIMELINE ITEM 2: Right Side Card (e.g., Schooling / Higher Education) -->
+            <div class="relative flex flex-col md:flex-row items-stretch mb-8 w-full z-10">
+                <!-- Left Empty Space Holder (Desktop Only) -->
+                <div class="w-full md:w-1/2 hidden md:block"></div>
+    
+                <!-- Timeline Node Center Indicator -->
+                <div
+                    class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#070b13] outline outline-2 outline-blue-600/30 transform -translate-x-1/2 top-10 z-20">
+                </div>
+    
+                <!-- Right Side Content Wrapper -->
+                <div class="w-full md:w-1/2 md:pl-12 flex justify-start pl-12 md:pl-12">
+                    <!-- Card Container -->
+                    <div
+                        class="bg-[#0f1626]/60 border border-gray-900/80 rounded-3xl p-6 md:p-8 w-full max-w-md shadow-xl text-left space-y-4 hover:border-blue-500/20 transition-all">
+                        <!-- School Header Info -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-950/40 border border-blue-900/40 flex items-center justify-center flex-shrink-0 text-blue-500">
+                                <i class="fa-solid fa-graduation-cap text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white tracking-wide">IMPACT College Patna</h3>
+                                <p class="text-gray-500 text-xs font-mono mt-1 flex items-center gap-1.5">
+                                    <i class="fa-regular fa-calendar text-[11px]"></i> 2021 - 2024
+                                </p>
+                            </div>
+                        </div>
+    
+                        <!-- Stream Name -->
+                        <h4 class="text-blue-500 font-bold text-lg tracking-wide pl-16">Bachelor of Computer Applications</h4>
+    
+                        <!-- Board Info -->
+                        <p class="text-gray-400 text-xs pl-16 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-blue-500"></i>Aryabhatta Knowledge University, Patna
+                        </p>
+    
+                        <!-- Description -->
+                        <p class="text-gray-400 text-sm leading-relaxed pl-16">
+                            BCA is a computer applications degree that provides knowledge of programming, software development, databases, and IT
+                            fundamentals.
+                        </p>
+    
+                        <!-- Status Tag Button -->
+                        <div class="pt-2 pl-16">
+                            <span
+                                class="inline-flex items-center gap-1.5 bg-blue-950/30 border border-blue-900/50 text-gray-300 text-xs px-4 py-1.5 rounded-full font-medium">
+                                <i class="fa-solid fa-check text-[10px] text-blue-500"></i> Completed
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <!-- 6. PROJECTS SECTION (Dynamically Rendered via JS) -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto border-t border-gray-900/50">
+    
+        <!-- Section Header -->
+        <div class="text-center mb-12 space-y-4">
+            <div
+                class="inline-block bg-blue-500/5 border border-blue-500/10 text-blue-400 text-[11px] px-4 py-1 rounded-full font-medium tracking-wide">
+                Portfolio
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                Featured <span class="text-blue-600">Work</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                Real-world projects showcasing machine learning, data analysis, and frontend skills.
+            </p>
+        </div>
+    
+        <!-- Category Tabs Navigation -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="filterProjects('ml')" id="tab-ml"
+                class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-all">
+                Machine Learning
+            </button>
+            <button onclick="filterProjects('analyst')" id="tab-analyst"
+                class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border border-gray-800 text-gray-400 hover:border-gray-700 transition-all">
+                Data Analyst
+            </button>
+            <button onclick="filterProjects('frontend')" id="tab-frontend"
+                class="tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border border-gray-800 text-gray-400 hover:border-gray-700 transition-all">
+                Frontend Projects
+            </button>
+        </div>
+    
+        <!-- Projects Grid Container -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- JavaScript will dynamically inject cards here -->
+        </div>
+    </section>
+
+
+    <!-- 8. FOOTER -->
+    <!-- 7. CONTACT SECTION WITH EMAILJS INTEGRATION (As per Screenshot 2026-06-19 020242.png) -->
+    <section id="contact" class="py-24 px-6 max-w-6xl mx-auto border-t border-gray-900/50">
+    
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12">
+    
+            <!-- Left Column: Contact Information Card -->
+            <div
+                class="lg:col-span-5 bg-[#0f1626]/60 border border-gray-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl text-left">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white tracking-wide">Contact Information</h3>
+                        <p class="text-gray-400 text-sm mt-2 font-normal">Feel free to reach out for work, partnerships or
+                            just to connect.</p>
+                    </div>
+    
+                    <div class="space-y-6">
+                        <!-- Email Item -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-blue-950/40 border border-blue-900/40 flex items-center justify-center text-blue-500 flex-shrink-0">
+                                <i class="fa-regular fa-envelope text-base"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-xs font-medium">Email</p>
+                                <a href="mailto:raushanraja4590@gmail.com"
+                                    class="text-gray-200 font-semibold text-sm hover:text-blue-400 transition-colors">raushanraja4590@gmail.com</a>
+                            </div>
+                        </div>
+    
+                        <!-- Phone Item -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-blue-950/40 border border-blue-900/40 flex items-center justify-center text-blue-500 flex-shrink-0">
+                                <i class="fa-solid fa-phone text-base"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-xs font-medium">Phone</p>
+                                <a href="tel:+918969619741"
+                                    class="text-gray-200 font-semibold text-sm hover:text-blue-400 transition-colors">+91
+                                    89696 19741</a>
+                            </div>
+                        </div>
+    
+                        <!-- Location Item -->
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-blue-950/40 border border-blue-900/40 flex items-center justify-center text-blue-500 flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-base"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-xs font-medium">Location</p>
+                                <p class="text-gray-200 font-semibold text-sm">Gr. Noida, UP, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bottom Social Row -->
+                <div class="flex items-center gap-3 pt-12 lg:pt-0">
+                    <a href="https://github.com/raushangupta007" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-950 border border-gray-900 text-gray-400 hover:text-white hover:border-blue-500/30 transition-all">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raushangupta07/" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-950 border border-gray-900 text-gray-400 hover:text-blue-400 hover:border-blue-500/30 transition-all">
+                        <i class="fa-brands fa-linkedin-in text-base"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/raushangupta007/" target="_blank"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-950 border border-gray-900 text-gray-400 hover:text-white hover:border-blue-500/30 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.116 5.826a1.373 1.373 0 0 0-.41.961c0 .374.148.732.411.995l1.048 1.048a1.373 1.373 0 0 0 .961.41h.017c.373 0 .73-.148.993-.411l2.39-2.39 5.059 5.059-4.82 4.82a1.346 1.346 0 0 0-.397.962c0 .36.14.705.397.962l1.021 1.021c.257.256.601.397.962.397.36 0 .705-.14 1.01-.397l6.116-6.116a1.373 1.373 0 0 0 0-1.942L14.444.411A1.351 1.351 0 0 0 13.483 0zm-6.08 12.558c-.36 0-.705.14-.962.397l-4.82 4.82a1.373 1.373 0 0 0 0 1.942l1.022 1.021c.256.256.601.397.961.397.36 0 .706-.14.962-.397l4.82-4.82a1.36 1.36 0 0 0 0-1.942l-1.022-1.021a1.352 1.352 0 0 0-.962-.397z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Right Column: Interactive Form -->
+            <div class="lg:col-span-7 bg-[#0f1626]/60 border border-gray-900 rounded-3xl p-8 shadow-xl">
+                <!-- Form action strictly pointed to FormSubmit with your verified email -->
+                <form id="contact-form" class="space-y-5 text-left h-full flex flex-col justify-between">
+            
+                    <div class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <input type="text" name="name" id="user_name" placeholder="Your Name" required
+                                class="w-full bg-[#070b13] border border-gray-900 focus:border-blue-500/40 text-gray-200 placeholder-gray-600 rounded-xl px-4 py-3.5 text-sm outline-none transition-all">
+                            <input type="email" name="email" id="user_email" placeholder="Your Email" required
+                                class="w-full bg-[#070b13] border border-gray-900 focus:border-blue-500/40 text-gray-200 placeholder-gray-600 rounded-xl px-4 py-3.5 text-sm outline-none transition-all">
+                        </div>
+            
+                        <input type="text" name="_subject" id="subject" placeholder="Subject" required
+                            class="w-full bg-[#070b13] border border-gray-900 focus:border-blue-500/40 text-gray-200 placeholder-gray-600 rounded-xl px-4 py-3.5 text-sm outline-none transition-all">
+            
+                        <textarea name="message" id="message" placeholder="Your Message" rows="6" required
+                            class="w-full bg-[#070b13] border border-gray-900 focus:border-blue-500/40 text-gray-200 placeholder-gray-600 rounded-xl px-4 py-3.5 text-sm outline-none transition-all resize-none"></textarea>
+                    </div>
+            
+                    <div class="pt-4">
+                        <button type="submit" id="submit-btn"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-blue-600/10">
+                            <i class="fa-regular fa-paper-plane text-xs"></i> Send Message
+                        </button>
+                    </div>
+            
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- JAVASCRIPT FOR DYNAMIC PROJECTS LOADING -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
+    <script >
+       document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            btn.innerText = 'Sending...';
+
+            const formData = {
+                name: document.getElementById('user_name').value,
+                email: document.getElementById('user_email').value,
+                _subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Sending straight to formsubmit backend API endpoint safely
+            fetch("https://formsubmit.co/ajax/raushanraja4590@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    btn.innerText = 'Send Message';
+                    alert('Message Sent Successfully!');
+                    document.getElementById('contact-form').reset();
+                })
+                .catch(error => {
+                    btn.innerText = 'Send Message';
+                    alert('Failed to send message.');
+                    console.error('Error:', error);
+                });
+        });
+        const allProjects = [
+                // 1. MACHINE LEARNING PROJECTS
+                {
+                    title: "AI-Powered Diet & Workout Planner",
+                    desc: "An automated, data-driven Health & Fitness web application built using Python and Streamlit.",
+                    tech: ["Python", "Scikit-Learn", "Streamlit", "NumPy","Pandas"],
+                    img: "img/ml-01.png",
+                    live: "https://ai-powered-diet-and-workout-planner-1.onrender.com/", code: "https://github.com/raushangupta007/ai-powered-diet-and-workout-planner", category: "ml"
+                },
+                {
+                    title: "RiskInsight AI",
+                    desc: "RiskInsight AI is a machine learning-driven web application designed to predict the probability of loan defaulter in real-time based on financial and demographic attributes of applicants.",
+                    tech: ["Python", "Scikit-Learn", "Streamlit", "NumPy", "Pandas"],
+                    img: "img/ml-02.png",
+                    live: "https://credit-risk-ai-jvxs.onrender.com/", code: "https://github.com/raushangupta007/credit_risk_ai", category: "ml"
+                },
+                 {
+                title: " Smart Crop Recommendation System",
+                desc: "This system evaluates specific soil characteristics and climate conditions to accurately recommend the optimal crop for farming with an accuracy of 99.32%.",
+                tech: ["Python", "Scikit-Learn", "Streamlit", "NumPy", "Pandas"],
+                img: "img/ml-03.png",
+                live: "https://crop-recommendation-app-4.onrender.com/", code: "https://github.com/raushangupta007/crop-recommendation-app", category: "ml"
+            },
+
+                // 2. DATA ANALYST PROJECTS
+                {
+                    title: " Customer Behavior Dashboard",
+                    desc: "An interactive analytics dashboard designed to analyze customer purchasing patterns, subscription behavior, revenue distribution, and demographic trends.",
+                    tech: ["Power BI", "SQL", "Excel", "EDA"],
+                    img: "img/da-01.png",
+                    live: "img/da-01.png", code: "https://github.com/raushangupta007/Customer-Behavior-Dashboard", category: "analyst"
+                },
+                {
+                    title: "Call Center Analytics Dashboard",
+                    desc: "A data analytics project that transforms raw call center data into actionable insights using Python for data processing, Excel for structured storage, and Power BI for interactive visualization.",
+                    tech: ["Python", "Power BI", "SQL", "Matplotlib","EDA","Excel"],
+                    img: "img/da-02.png",
+                    live: "img/da-02.png", code: "https://github.com/raushangupta007/call_center_dashboard", category: "analyst"
+                },
+                 {
+                title: "Zepto Sales Analysis Dashboard",
+                desc: "This project provides actionable insights into sales trends, product demand, and outlet performance using interactive visualizations.",
+                 tech: ["Python", "Power BI", "SQL", "Matplotlib", "EDA", "Excel"],
+                img: "img/da-03.png",
+                live: "img/da-03.png", code: "https://github.com/raushangupta007/Zepto-Sales-Analysis-Dashboard", category: "analyst"
+            },
+             {
+                title: "Cryptocurrency Analytics Dashboard",
+                desc: "An interactive Power BI dashboard that provides comprehensive analysis of cryptocurrency market performance, price trends, trading volume, and comparative asset behavior.",
+                tech: ["Python", "Power BI", "SQL", "Matplotlib", "EDA", "Excel"],
+                img: "img/da-04.png",
+                live: "img/da-04.png", code: "https://github.com/raushangupta007/Cryptocurrency-Analytics-Dashboard", category: "analyst"
+            },
+            {
+                title: " OLA Ride Analytics Dashboard",
+                desc: "An interactive business intelligence dashboard that analyzes ride bookings, revenue, cancellations, and operational performance for a ride-hailing platform.",
+                tech: ["Python", "Power BI", "SQL", "Matplotlib", "EDA", "Excel"],
+                img: "img/da-05.png",
+                live: "img/da-05.png", code: "https://github.com/raushangupta007/OLA-Ride-Analytics-Dashboard", category: "analyst"
+            },
+
+                // 3. FRONTEND PROJECTS
+                {
+                    title: "Dream Words UI",
+                    desc: "A modern educational platform or university website named Edusity.",
+                    tech: ["HTML", "Tailwind CSS", "React js"],
+                    img: "img/fd-01.png",
+                    live: "https://edusity-gilt-one.vercel.app/", code: "https://github.com/raushangupta007/edusity-", category: "frontend"
+                },
+                {
+                    title: "Quiz app",
+                    desc: "A straightforward and user-friendly quiz application designed for quick trivia, instant feedback, and effortless learning.",
+                     tech: ["HTML", "Tailwind CSS", "React js"],
+                    img: "img/fd-02.png",
+                    live: "https://quiz-app-theta-henna.vercel.app/", code: "https://github.com/raushangupta007/Quiz_app", category: "frontend"
+                },
+                {
+                title: "Tic Toc Toe",
+                desc: "A classic, quick-paced two-player strategy game where players compete to align three marks in a row.",
+                tech: ["HTML", "Tailwind CSS", "React js"],
+                img: "img/fd-03.png",
+                live: "https://tictactoe-ashen-three.vercel.app/", code: "https://github.com/raushangupta007/tictactoe", category: "frontend"
+            }
+            ];
+
+            function renderCards(filteredData) {
+                const grid = document.getElementById('projects-grid');
+
+                // Map data to match the exact card structure in Screenshot 2026-06-19 003137.jpg
+                grid.innerHTML = filteredData.map(p => `
+            <div class="bg-[#0f1626]/70 rounded-3xl overflow-hidden border border-gray-900 p-4 flex flex-col justify-between group hover:border-blue-500/20 transition-all duration-300 shadow-xl min-h-[480px]">
+                
+                <!-- Inner Layout wrapper -->
+                <div>
+                    <!-- Card Top Image Block (Matching screenshot aspect) -->
+                    <div class="h-48 rounded-2xl overflow-hidden relative bg-gray-950">
+                        <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105">
+                    </div>
+                    
+                    <!-- Content Block -->
+                    <div class="pt-5 px-2 text-left">
+                        <h3 class="text-xl font-bold text-blue-500 group-hover:text-blue-400 transition-colors">${p.title}</h3>
+                        <p class="text-gray-400 text-xs md:text-sm mt-3 line-clamp-3 leading-relaxed font-normal">${p.desc}</p>
+                    </div>
+                </div>
+
+                <!-- Footer elements (Tags + Buttons) aligned to bottom -->
+                <div class="px-2 pt-4">
+                    <!-- Tech Stack Tags -->
+                    <div class="flex flex-wrap gap-1.5 mb-5">
+                        ${p.tech.map(t => `<span class="bg-gray-950 text-blue-400 text-[10px] font-mono px-2.5 py-1 rounded-full border border-gray-900">${t}</span>`).join('')}
+                    </div>
+                    
+                    <!-- Action Buttons matching screenshot structure -->
+                    <div class="flex gap-3 text-xs font-semibold">
+                        <a href="${p.live}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Live
+                        </a>
+                        <a href="${p.code}" class="border border-gray-800 hover:border-gray-700 text-gray-300 px-4 py-2 rounded-xl flex items-center transition-colors">
+                            Code
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        `).join('');
+            }
+
+            function filterProjects(category) {
+                // Filter the items array
+                const filtered = allProjects.filter(p => p.category === category);
+                renderCards(filtered);
+
+                // Reset all button styles
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.className = "tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border border-gray-800 text-gray-400 hover:border-gray-700 transition-all";
+                });
+
+                // Set active button style (Blue style)
+                const activeTab = document.getElementById(`tab-${category}`);
+                activeTab.className = "tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-all";
+            }
+
+            // Default load: Machine Learning Category
+            document.addEventListener('DOMContentLoaded', () => {
+                filterProjects('ml');
+            });
+
+        document.addEventListener('DOMContentLoaded', loadProjects);
+
+        const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let particles = [];
+            const maxParticles = 60;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.radius = 2;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#3b82f6'; // Light blue dots
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                for (let i = 0; i < maxParticles; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw lines
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 150)})`; // Fading blue lines
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+
+    </script>
+</body>
+
+</html>
